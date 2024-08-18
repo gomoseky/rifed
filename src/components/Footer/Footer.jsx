@@ -4,60 +4,60 @@ import styles from "./Footer.module.scss";
 class Footer extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            text: "",
-            showText: true,
-            currentTextIndex: 0,
+        Этот.состояние = {
+            текст: "",
+            шоутекст: истинный,
+            текущийтекстиндекс: 0,
         };
-        this.texts = [
-            `ЖДУ ДАМАГ ! ${this.props.username || '???'}`,
-            "?",
-            "Мой тг:@soonzins.",
-            "Мой дискорд сервер CALIPSO:https://discord.gg/"
-            // Добавьте сюда другие строки текста, которые вы хотите анимировать
+        Этот.тексты = [
+            `ЖДУ ДАМАГ ! ${этот.реквизит.имя пользователь || '???'}`,
+            "Кодер js/React/html/py",
+            "Мой тг:@gomoseky.",
+            "Мой дискорд сервер CALIPSO: https://dsc.gg/calipsoclqn"
+            // Добавьте сюда другие строки текста, которые вы хотите анимировать.
         ];
-        this.interval = null;
+        Этот.ингервал = нулевой;
     }
 
-    componentDidMount() {
-        this.startTextAnimation();
+    компонентДидМаунт() {
+        Этот.старттекстанимация();
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.username !== prevProps.username) {
-            // Update the first text with the new username
-            this.texts[0] = `ЖДУ ДАМАГ !! ${this.props.username || '???'}`;
+    компонентДидОбдате(предыдущаяреквизит) {
+        Если (этот.реквизит.Имя пользователь !== предыдущаяреквизит.Имя пользователь) {
+            // Обновите первый текст, указав новое имя пользователя.
+            Этот.тексты[0] = `Давай мерится хуями? ${этот.реквизит.Имя пользователь || '???'}`;
         }
     }
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
+    компонентВиллунмонт() {
+        ОчиститьИнтервал(этот.ингервал);
     }
 
-    startTextAnimation = () => {
-        this.interval = setInterval(() => {
-            this.setState({ showText: false });
+    старттекстанимация = () => {
+        Этот.ингервал = setInterval(() => {
+            Этот.setState({ шоутекст: ЛОЖЬ });
 
             setTimeout(() => {
-                this.setState(prevState => ({
-                    text: this.texts[prevState.currentTextIndex],
-                    currentTextIndex: (prevState.currentTextIndex + 1) % this.texts.length,
-                    showText: true,
+                Этот.setState(предыдущее состояние => ({
+                    текст: этот.тексты[предыдущее состояние.настоящийтекстиндекс],
+                    настоящийтекстиндекс: (предыдущее состояние.настоящийтекстиндекс + 1) % этот.тексты.длина,
+                    шоутекст: истинный,
                 }));
-            }, 500); // Duration of fade out
-        }, 2500); // Total duration for each text display (2 seconds display + 0.5 second fade out)
+            }, 500); // Продолжительность затухания
+        }, 2500); // Общая продолжительность каждого текстового дисплея (2 секунды отображения + 0,5 секунды затухания))
     };
 
-    render() {
-        const { text, showText } = this.state;
-        return (
-            <footer className={styles.footer}>
-                <p className={`${styles.text} ${showText ? '' : styles.fadeOut}`}>
-                    <span>{text}</span>
-                </p>
-            </footer>
+    Оказать() {
+        константа { text, showText } = этот.состояние;
+        Весра (
+            <Нижний колонтитул Имя класс={стили.Нижний колонтитул}>
+                <П Имя класс={`${стили.текст} ${шоутекст ? '' : стили.постепенное отравленое}`}>
+                    <охватывать>{текст}</охватывать>
+                </П>
+            </Нижний колонтитул>
         );
     }
 }
 
-export default Footer;
+экспорт по умолчанию Нижний колонтитул;
