@@ -1,5 +1,5 @@
-экспорт константа id = '1271365343352328256' // Идентификатор Дискорда
+export const id = '1271365343352328256' // Discord id
 
-экспорт константа github = 'https://github.com/gomoseky' // Ваш URL-адрес GitHub
+export const github = 'https://github.com/gomoseky' // Your github url
 
-экспорт константа theme = 'темный' // "темный» или «светлый"
+export const theme = 'dark' // "dark" or "light"
