@@ -26,7 +26,7 @@ class Footer extends Component {
     componentDidUpdate(prevProps) {
         if (this.props.username !== prevProps.username) {
             // Update the first text with the new username
-            this.texts[0] = `Давай мерится хуями? ${this.props.username || '???'}`;
+            this.texts[0] = `Я сигма!!!!!!! ${this.props.username || '???'}`;
         }
     }
 
